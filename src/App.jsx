@@ -1,18 +1,38 @@
 import './App.css'
-import NavBar from './Navbar'
 import Products from './Products'
 import Profile from './userProfile'
 
 function App() {
-  const firstName = "Flora"
-  const lastName = "Ozoemena"
-  const fullName = `${firstName} ${lastName}`
-  const MacBookProducts = ["MacBook Air", "MacBook Pro", "MacBook Neo"]
+  const MacBookProducts = ["MacBook Air", "MacBook Pro", "MacBook Neo", "MacBook Ultra", "MacBook Max", "MacBook Mini", "MacBook Nano", "MacBook Micro", "MacBook Mega", "MacBook Giga", "MacBook Tera", "MacBook Peta", "MacBook Exa", "MacBook Zetta", "MacBook Yotta"]
+  const Profiles = [
+    {
+      img: "./photo1.jpg",
+      name: "John Doe"
+    },
+    {
+      img: "./photo2.jpg",
+      name: "Jane Doe"
+    },
+    {
+      img: "./photo3.jpg",
+      name: "Jim Doe"
+    }
+  ]
 
   return (
     <div className="p-4">
-    <Profile img="./photo1.jpg" name={fullName} />
-    <Products product={MacBookProducts} />
+      <div className="profile-container">
+        {Profiles.map((profile)=> (
+          <Profile img={profile.img} name={profile.name} />
+        ))}
+      </div>
+
+      
+    <div className="product-container">
+      {MacBookProducts.map((product)=> (
+        <Products product={product} />
+      ))}
+    </div>
     </div>
   )
 }

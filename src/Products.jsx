@@ -1,4 +1,4 @@
-function Products({product}) {
+function Products({product = "No Product Recored"}) {
     return (
         <div className="product">
             <h1>{product}</h1>
